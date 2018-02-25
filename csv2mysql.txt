@@ -1,0 +1,5 @@
+ load data local infile '/home/gnome/Dokumente/KivyTest/Test/NamensListeOhneNull.csv' into table kaffeeWaechter.user
+ fields terminated by ','
+ enclosed by '"'
+ lines terminated by '\n'
+ (kuerzel, nachname, vorname)
