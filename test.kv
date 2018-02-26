@@ -21,7 +21,7 @@
         Button:
             size_hint: 1, 0.3
             text: 'Tasse'
-            on_press: root.dismiss(), app.root.confirmCup(app.root.rv_layout.selected_value)
+            on_press: app.root.confirmCup(app.root.rv_layout.selected_value), root.dismiss()
         Button:
             size_hint: 1, 0.3
             text: 'Kanne'
