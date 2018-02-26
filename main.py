@@ -65,7 +65,7 @@ class RV(RecycleView):
         table = self.dbc.executeQuery("SELECT kuerzel FROM user")
         x = []
         i = 0
-        for i in range(0,24):
+        for i in range(0,25):
             x.append({'text':table[0+i][0].upper(), 'id':table[0+i][0]})
             x.append({'text':table[25+i][0].upper(), 'id':table[25+i][0]})
             x.append({'text':table[50+i][0].upper(), 'id':table[50+i][0]})
