@@ -91,13 +91,6 @@ class RV(RecycleView):
     def getTasse(self):
         return str(self.user.anz)
 
-    def confirmCup(self,user):
-        query = ("UPDATE user SET anz = anz+1 WHERE kuerzel = '{0}';").format(user[10:])
-        self.dbc.executeNonQuery(query)
-
-    def confirmPot(self,user):
-        query = ("UPDATE user SET anz = anz+4 WHERE kuerzel = '{0}';").format(user[10:])
-        self.dbc.executeNonQuery(query)
 
 class TestApp(App):
     title = "kaffee@bk-tm.de"
