@@ -21,11 +21,11 @@
         Button:
             size_hint: 1, 0.3
             text: 'Tasse'
-            on_press: app.root.confirmCup(app.root.rv_layout.selected_value), root.dismiss()
+            on_press: root.popup_dismiss(app.root.rv_layout.selected_value,1)
         Button:
             size_hint: 1, 0.3
             text: 'Kanne'
-            on_press: app.root.confirmPot(app.root.rv_layout.selected_value),root.dismiss()
+            on_press: root.popup_dismiss(app.root.rv_layout.selected_value,0)
         Button:
             size_hint: 1, .3
             text: 'Abbrechen'

@@ -17,9 +17,17 @@ from kivy.properties import ListProperty, StringProperty, ObjectProperty
 # -*- coding utf-8 -*-
 
 class MessageBox(Popup):
-
-    def popup_dismiss(self):
+    dbc = DB_Connection()
+    def popup_dismiss(self, user,cup):
         self.dismiss()
+        self.dbc._open()
+        if cup == 1:
+            query = ("UPDATE user SET anz = anz+1 WHERE kuerzel = '{0}';").format(user[10:])
+        elif cup == 0:
+            query = ("UPDATE user SET anz = anz+4 WHERE kuerzel = '{0}';").format(user[10:])
+        self.dbc.executeNonQuery(query)
+        self.dbc._close()
+
 
 class SelectableRecycleGridLayout(FocusBehavior, LayoutSelectionBehavior, RecycleGridLayout):
     """ Adds selection and focus behaviour to the view. """
